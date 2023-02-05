@@ -1,0 +1,289 @@
+body, ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+a:hover {
+  background: rgba(245, 241, 241, 0.05);
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#header {
+  box-sizing: border-box;
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(47, 44, 45);
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+#btn-mob {
+  display: none;
+  color:white;
+}
+
+@media (max-width: 600px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: #6c6a6a;
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(169, 19, 19, 0.05);
+  }
+  #btn-mob {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+h1{
+  margin-top: 0;
+  padding-top: 20px;
+  text-align: center;
+  color:white;
+}
+
+
+main{
+  background: rgba(21,38,53,255);
+}
+#grid {
+  display: grid;
+  margin-top: 20px;
+  height: auto;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  padding-bottom: 40px;
+  gap: 20px;
+  
+}
+
+.carro{
+  height: 150px;
+  padding: 15px;
+  background-color:white ;
+  display: flex;
+  border-radius: 10px;
+}
+
+.left-carro{
+  width: 50%;
+  height: 100%;
+}
+
+.right-carro{
+  width: 50%;
+  height: 100%;
+  padding-left: 10px;
+}
+
+.carro img{
+  width: 100%;
+  height: 100%;
+}
+
+.carro button{
+  width: 30% auto;
+  height: 20% auto;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+li{
+  margin-left: 20px;
+  list-style-type: none;
+}
+.main-content {  
+  background-image: url('./images/index.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 550px;
+  text-align: center;
+  display: block;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+#find_form{
+  display: flex;
+  padding-top: 5%;
+  padding-left: 40%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  background-color: white;
+  text-align: justify;
+  flex-direction: column;
+}
+
+.form_div{
+  padding-top: 1%;
+  margin-left: 35%;
+  border-radius: 10px;
+  width: 30%;
+  height: 300px;
+  background-color: white;
+  color:black
+}
+
+.form_div button{
+  width: 41%;
+}
+
+
+h2 {
+  text-align: center;
+}
+
+input {
+  width: 40%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
+.main-cadastro {
+  width: 100%;
+  height: 625px;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-cadastro{
+  width: 50%;
+  height: 100%;
+}
+.right-cadastro {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(6,20,29,255);
+  color: white
+}
+.card{
+  height: 100%;
+}
+.img-cadastro {
+  height: 100%;
+  width: 100%;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 22px;
+}
+
+.form-box input{
+  width: 100%;
+  height: 20px; 
+}
+
+.form-box label{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.form-box button{
+  margin-top: 20px;
+  width: auto;
+  font-size: 20px;
+}
+
+select{
+  width: 100% auto;
+  text-align: center;
+  font-size: 20px;
+}
+.footer{
+  background-color: rgb(47, 44, 45);
+  height: 100px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color:white;
+  margin: 0px;
+}
+
+textarea{
+  text-align: center;
+}

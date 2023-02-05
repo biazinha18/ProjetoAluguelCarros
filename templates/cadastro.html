@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <script src="{{url_for('static', filename='functions.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Tela de CADASTRO</title>
+</head>
+<body>
+    <header id="header">
+        <a id="logo" href="">Aluguel.Carro</a>
+
+        <nav id="nav">
+            <button aria-label=" Abrir Menu" id="btn-mob" aria-haspopup="true" aria-expanded="false" onclick="toggleMenu(event)">Menu
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li> <a href="/">Home</a></li>
+                <li> <a href="{{ url_for('cadastro') }}">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-cadastro">
+        <div class="left-cadastro">
+            <img class="img-cadastro" src="{{ url_for('static', filename='images/fundo.jpg') }}">
+        </div>
+        <div class="right-cadastro"> 
+            <div class="form-div">
+                <h1 id="titulo-cadastro"> Cadastro de carros</h1>
+                <form id="form-cadastro">
+                    <div class="form-box">
+                        <label for="modelo">Modelo:</label>
+                        <input id="modelo" type="text" name="modelo">
+                    </div>
+                    <div class="form-box">
+                        <label for="marca">Marca:</label>
+                        <input id="marca" type="text" name="marca">
+                    </div>
+                    <div class="form-box">
+                        <label for="ano">Ano:</label>
+                        <input id="ano" type="text" name="ano">
+                    </div>
+                    <div class="form-box">
+                        <label for="valor">Valor da diaria:</label>
+                        <input id="valor" type="text" name="valor">
+                    </div>
+                    <div class="form-box">
+                        <label for="status">Status:</label>
+                        <select name="status" id="status">
+                            <option value="Alugado">Alugado</option>
+                            <option value="Livre">Livre</option>
+                            <option value="Manutenção">Em Manutenção</option>
+                        </select>
+                    </div>
+                    <div class="form-box">
+                        <label for="observacoes">Observações:</label>
+                        <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea>
+                    </div>
+                    <div class="form-box">
+                        <button onclick="add_update_car('POST', 'form-cadastro', '')">Cadastrar</button>
+                    </div>
+                </form>
+            </div> 
+        </div>  
+    </div>
+    <footer class="footer">
+        <h3>Projeto Ajax @biaamada17@gmail.com</h3>
+    </footer>
+   
+</body>
+</html>

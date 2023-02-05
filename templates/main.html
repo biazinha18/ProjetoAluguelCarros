@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <script src="{{url_for('static', filename='functions.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Aluguel de carros</title>
+</head>
+<body>
+    <header id="header">
+        <a id="logo" href="">Aluguel.Carro</a>
+
+        <nav id="nav">
+            <button aria-label=" Abrir Menu" id="btn-mob" aria-haspopup="true" aria-expanded="false" onclick="toggleMenu(event)">Menu
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li> <a href="/">Home</a></li>
+                <li> <a href="{{ url_for('cadastro') }}">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-content">
+        <div class="form_div">
+            <h2>Aluguel de carros em Curitiba, Paraná </h2>
+            <p>Procurando ofertas de aluguel de carros
+             em Curitiba (Paraná)? Pesquise aqui mesmo!</p>
+            <form id="find_form">
+                <label for="modelo">Modelo:</label>
+                <input id="modelo" type="text" name="modelo">
+                <label for="ano">Ano:</label>
+                <input id="ano" type="text" name="ano">
+                <button onclick="find_car()">Pesquisar</button>
+            </form>
+        </div>
+    </div>
+    <main>
+        <h1>Aluguel de Carros</h1>
+        <div id="grid">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <h3>Projeto Ajax @biaamada17@gmail.com</h3>
+    </footer>
+
+</body>
+</html>

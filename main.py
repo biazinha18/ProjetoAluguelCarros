@@ -55,10 +55,8 @@ def add_carro():
     if len(carros) > 0:
         id = carros[-1]['id'] + 1
 
-    c = {'id':id, 'image':'https://autoentusiastas.com.br/ae/wp-content/uploads/2016/01/Novo-Jetta-Highline-9-1140x720.jpg'}
-
-    c.update(data)
-
+    c = {'id':id, 'image':'https://autoentusiastas.com.br/ae/wp-content/uploads/2016/01/Novo-Jetta-Highline-9-1140x720.jpg', 'modelo':data['modelo'], 'marca':data['marca'], 'ano':data['ano'], 'observacoes':data['observacoes'], 'valor':data['valor'], 'status':data['status']}
+    
     carros.append(c) 
 
     return jsonify({'carro': c}), 201
@@ -70,15 +68,14 @@ def update_carro(id):
         return jsonify({'message':'body is not a json'}), 415
 
     data = request.get_json()
+    print(type(id))
 
     if not data or not all(key in data for key in ('modelo','marca', 'ano', 'observacoes', 'valor', 'status')):
         return jsonify({'message':'bad request'}), 400
 
     for i,carro in enumerate(carros):
         if carro['id'] == id:
-            c = {'id':id, 'image':'https://autoentusiastas.com.br/ae/wp-content/uploads/2016/01/Novo-Jetta-Highline-9-1140x720.jpg'}
-            c.update(data)
-            carros[i] = c
+            carros[i] = {'id':id, 'image':'https://autoentusiastas.com.br/ae/wp-content/uploads/2016/01/Novo-Jetta-Highline-9-1140x720.jpg', 'modelo':data['modelo'], 'marca':data['marca'], 'ano':data['ano'], 'observacoes':data['observacoes'], 'valor':data['valor'], 'status':data['status']}
             return jsonify({'carro': carros[i]}),200
             
     return jsonify({'message':'carro not found'}), 404

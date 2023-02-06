@@ -15,7 +15,6 @@ function add_update_car(method, formid, variable){
   var base_request_url = '/carros'
   const form = document.querySelector('#'+formid);
   const data = Object.fromEntries(new FormData(form).entries());
-  console.log(data)
   if(method == 'PUT')
     base_request_url = base_request_url + "/" + data[variable]
   
@@ -38,7 +37,8 @@ function delete_car(id){
   window.location.reload();
 }
 
-function find_car(){
+function find_car(event){
+  event.preventDefault();
   const modelo = document.getElementById('modelo').value;
   const ano = document.getElementById('ano').value;
   window.location.href = 'carros/'+modelo+'/'+ano;
